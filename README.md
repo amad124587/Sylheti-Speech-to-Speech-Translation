@@ -17,6 +17,7 @@ The Sylheti sentences and their Bangla and English translations come from the pu
 ```
 notebooks/   Colab notebooks (outputs and run metadata removed)
 data/        round2_clean.csv - Round 2 recording metadata (speaker codes only)
+scripts/     convert_to_wav.py - convert recordings to 16 kHz mono WAV
 thesis/      Thesis draft (PDF)
 ```
 
@@ -29,11 +30,14 @@ thesis/      Thesis draft (PDF)
 | Step2d_ASR_Turbo | Fine-tune and test Whisper-large-v3-turbo (Round 1) |
 | Step2e_ASR_Small | Fine-tune and test Whisper-small (Round 1) |
 | Step3_MT_Training | Fine-tune and test NLLB-200 for Sylheti → Bangla / English |
+| Step3b_Cascade | Cascade ASR → MT evaluation (Round 1 ASR models) |
 | Step4_TTS, Step4_TTS_normalized, Step4b_TTS_Compare | TTS generation and intelligibility evaluation |
-| Step6_TTS_VoiceClone, Step6c_TTS_VoiceClone_v3 | Voice-cloning experiments (MMS-TTS fine-tuning) |
+| Step6_TTS_VoiceClone, Step6b_TTS_VoiceClone_v2, Step6c_TTS_VoiceClone_v3 | Voice-cloning experiments (MMS-TTS fine-tuning) |
 | Step7_MOS_prepare | Audio samples for the listening test (MOS) |
+| Step7b_MOS_analysis | MOS results and significance tests |
 | Step9_Round2_Recheck | Round 2 recording check |
 | Step10_ASR_Round2, Step10b_ASR_Round2_Small | Round 2 training, test and paired bootstrap |
+| Step11_Cascade_Round2 | Round 2 cascade ASR → MT evaluation and bootstrap, all four ASR models |
 | Step12_Demo_Round2, Step12_Demo_Round2_V1voice | Interactive end-to-end demo (Gradio) |
 
 The notebooks expect the project data in Google Drive (`/content/drive/MyDrive/Sylheti_Thesis/...`) and were run on Google Colab GPUs (T4 / L4 / A100).
